@@ -37,11 +37,7 @@ func (f *filesystemBlobstore) initialize(c Config) error {
 }
 
 func (f *filesystemBlobstore) Fetch(name string) (io.ReadCloser, error) {
-	r, err := os.Open(path.Join(f.basedir, name))
-	if errors.Is(err, os.ErrNotExist) {
-		return nil, nil
-	}
-	return r, err
+	return os.Open(path.Join(f.basedir, name))
 }
 
 func (f *filesystemBlobstore) Store(r io.ReadCloser) (string, error) {

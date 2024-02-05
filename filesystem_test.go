@@ -10,7 +10,7 @@ func TestFilesystemInit(t *testing.T) {
 		{"file:///tmp", "/tmp"},
 		{"file://data", "data"},
 		{"file://./data", "data"},
-		{"file://data/storage", "data/storage"},
+		{"file://data/test-storage", "data/test-storage"},
 	} {
 		f := &filesystemBlobstore{}
 		err := f.initialize(Config{URL: example.url})

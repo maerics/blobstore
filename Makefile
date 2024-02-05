@@ -1,3 +1,6 @@
+build: test
+	go build -o ./blobstore ./cmd
+
 test: fmt vet
 	go test ./...
 
